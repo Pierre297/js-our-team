@@ -7,6 +7,7 @@
 var memberName = document.getElementById("name");
 var memberRole = document.getElementById("role");
 var memberImage = document.getElementById("image");
+var profileCard = document.querySelector(".team-container");
 
 
 // oggetti membri
@@ -43,18 +44,42 @@ var ourTeam = [
     },
 ];
 
-let teamMate = false;
 
 // cicli oggetti
-for (let i = 0; i < ourTeam.length; i++) {
-    let objClass = ourTeam[i];
+for(let i = 0; i < ourTeam.length; i++) {
 
-    for (let key in objClass){
-        console.log(key, objClass);
-        if (objClass === memberName){
-            teamMate = true;
-        }
+    let profileName = '';
+    let profileRole = '';
+    let profileImg = '';
+
+    for(var key in ourTeam){
+        profileName = ourTeam[i].userName;
+        profileRole = ourTeam[i].jobRole;
+        profileImg = ourTeam[i].profilePicture;
+
     }
-}
+
+    console.log(profileName);
+    console.log(profileRole);
+    console.log(profileImg);
+
+    // profile Card
+    profileCard.innerHTML += `
+    <div class="team-card">
+    <div class="card-image">
+    <img
+    src="${profileImg}"
+    alt="${profileName}"
+     />
+    </div>
+    <div class="card-text">
+    <h3>${profileName}</h3>
+    <p>${profileRole}</p>
+    </div>
+    </div>`
+
+};
+
+
 
 
