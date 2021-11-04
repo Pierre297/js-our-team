@@ -81,6 +81,45 @@ for(let i = 0; i < ourTeam.length; i++) {
 
 // -----------------------------------------------------------------------------------------------------------------------------------------
 
+// funzione nuovi membri
+// click nuova scheda utente
+addBtn.addEventListener('click',
+function newMembers() {
+    
+    var memberName = document.getElementById("name").value;
+    var memberRole = document.getElementById("role").value;
+    var memberImage = document.getElementById("image").value;
+
+    // nuuovo array da inserire nella struttura dati
+    newProfileCard = {
+        'newMemberName' : memberName,
+        'newMemberRole' : memberRole,
+        'newMemberImage' : memberImage,
+    };
+
+    ourTeam.push(newProfileCard);
+
+    // profile card nuovo membro
+    profileCard.innerHTML += `
+    <div class="team-card">
+    <div class="card-image">
+    <img
+    src="${newProfileCard.newMemberImage}"
+    alt="${newProfileCard.newMemberName}"
+     />
+    </div>
+    <div class="card-text">
+    <h3>${newProfileCard.newMemberName}</h3>
+    <p>${newProfileCard.newMemberRole}</p>
+    </div>
+    </div>`
+}
+);
+
+
+    
+
+
 
 
 
