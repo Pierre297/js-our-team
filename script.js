@@ -1,12 +1,10 @@
 // crea delle variabili che connettono il tipo di imput inserito in html al file js
 // creiamo il nostro array di oggetti che rappresentano ciascun membro del team.
-// crea cicli for per confrontare le informazioni degli oggetti ccon gli input html
-// quando corrispondono stampa la scheda profilo del membro sull'html
+// crea cicli for per confrontare le informazioni degli oggetti
+// stampa la scheda profilo del membro sull'html
 
 // variabili input entrata
-var memberName = document.getElementById("name");
-var memberRole = document.getElementById("role");
-var memberImage = document.getElementById("image");
+const addBtn = document.getElementById("addMemberButton");
 var profileCard = document.querySelector(".team-container");
 
 
@@ -59,6 +57,7 @@ for(let i = 0; i < ourTeam.length; i++) {
 
     }
 
+    // display in console profili
     console.log(profileName);
     console.log(profileRole);
     console.log(profileImg);
@@ -79,6 +78,9 @@ for(let i = 0; i < ourTeam.length; i++) {
     </div>`
 
 };
+
+// -----------------------------------------------------------------------------------------------------------------------------------------
+
 
 
 
